@@ -34,7 +34,7 @@ app.get("/addition",(req,res)=>{
 
 app.post('/sign-in', async(req, res) => {
   let body = {
-    username:req.body.username,
+    email:req.body.email,
     password:req.body.password
   }
   let result = await client.db("database").collection("users").insertOne(req.body)
@@ -67,7 +67,6 @@ app.post('/sign-up', async(req, res) => {
     firstName:req.body.firstName,
     lastName:req.body.lastName.require,
     eamil:req.body.eamil.require,
-    userName:req.body.userName.require,
     password:req.body.password.require,
     confirm_password:req.body.confirm_password,
   }
