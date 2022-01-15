@@ -66,6 +66,7 @@ app.post('/sign-up', async(req, res) => {
   let body = {
     firstName:req.body.firstName,
     lastName:req.body.lastName.require,
+    eamil:req.body.eamil.require,
     userName:req.body.userName.require,
     password:req.body.password.require,
     confirm_password:req.body.confirm_password,
