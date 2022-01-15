@@ -66,7 +66,7 @@ app.post('/sign-up', async(req, res) => {
   let body = {
     firstName:req.body.firstName,
     lastName:req.body.lastName.require,
-    eamil:req.body.eamil.require,
+    email:req.body.email,
     password:req.body.password.require,
     confirm_password:req.body.confirm_password,
   }
@@ -74,6 +74,10 @@ app.post('/sign-up', async(req, res) => {
   res.json({message:"sign-up successfully"})
  });
  
+//  app.get('/list', async (req, res)=> {
+//   let result = await client.db("database").collection("users").find({})
+//   res.json({list:await result.toArray()})
+// })
 
 const server = app.listen(3000, function() {
     console.log("server is connected http://localhost:3000")
